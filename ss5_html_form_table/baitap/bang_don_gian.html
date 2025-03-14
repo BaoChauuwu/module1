@@ -8,14 +8,30 @@
   p{
     color: blue;
   }
+  .left{
+    margin-left: 10px;
+  }
+  .right{
+    margin-left: 300px;
+    margin-top: -70px;
+  }
+  h2{
+    margin-left: 150px;
+  }
 </style>
 <body>
-  <h2 style="color: blue;text-align: center">Thời Khóa Biểu</h2>
-  <p>Lớp: Codygym</p>
-  <p>Giáo viên: Bá Hùng</p>
-  <p>Phòng học: Trong phòng</p>
-  <p>Thời gian học: 13h30 - 17h30</p>
-  <p>Ngày học: Thứ,2,4,6 </p>
+  <h2 style="color: blue">Thời Khóa Biểu</h2>
+  <div class="left">
+    <p>Lớp: Codygym</p>
+    <p>Giáo viên: Bá Hùng</p>
+    <p>Phòng học: Trong phòng</p>
+  </div>
+
+  <div class="right">
+    <p>Thời gian học: 13h30 - 17h30</p>
+    <p>Ngày học: Thứ,2,4,6 </p>
+  </div>
+
   <table border="1">
   <tr style="background-color: antiquewhite;">
     <td colspan="3" style="background: white"></td>
@@ -27,7 +43,7 @@
     <th>Tuần</th>
     <th>Ngày bắt đầu</th>
     <th>Ngày kết thúc</th>
-    <td colspan="3"> Môn học</td>
+    <td colspan="3" style="text-align: center"> Môn học</td>
   </tr>
   <tr>
     <td>01</td>
