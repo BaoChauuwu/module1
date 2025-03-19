@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let kiemTra= parseFloat(prompt("diem bai kiem tra"));
+  let giuaKy = parseFloat(prompt("diem bai giua tra"));
+  let cuoiKy = parseFloat(prompt("diem bai cuoi tra"));
+  let result = (kiemTra + giuaKy*2 + cuoiKy * 3)/6;
+  if (result >=8){
+    document.write("du gioi roai a du")
+  }
+  else if ( result >= 6.5){
+    document.write("du kha roai a du")
+  }
+  else if ( result >= 5){
+    document.write("du trung binh  roai a du")
+  }
+  else {
+    document.write("du yeu roai a du")
+  }
+</script>
+</body>
+</html>
