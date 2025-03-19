@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bá Đần</title>
+</head>
+<body>
+<script>
+  const PI = 3.1415;
+  // let radius= prompt("moi ban nhap ban kinh hinh tron");
+  // if (radius<0)
+  // {
+  //   document.write("Nhap lai voi ban kinh lon hon khong");
+  //
+  // }
+  //
+  // else {
+  //   let acreage= PI*radius*radius;
+  //   document.write("Dien tich cua hinh tron la: "+ acreage);
+  // }
+
+  function perimeterCircle(radius) {
+      let perimeter = 2*PI*radius;
+      return perimeter
+  }
+  let radius = prompt("moi ban nhap ban kinh r")
+  perimeter = perimeterCircle(radius);
+  alert(perimeter);
+</script>
+</body>
+</html>
