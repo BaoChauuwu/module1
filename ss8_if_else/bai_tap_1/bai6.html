@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Cho duoi 10tr thi bu 5%-->
+<!--Duoi 20tr bu 10%-->
+<!--Duoi 30tr bu 20%-->
+<!--Duoi 50tr bu 30%-->
+<!--Tren 50tr bu 50%-->
+<script>
+    let money= prompt("Moi ban nhap so tien kiem duoc: ");
+    let hoaHong= 0;
+    if (money<10){
+        hoaHong =money*5/100;
+        document.write(hoaHong);
+    }
+    else if (money <20){
+        hoaHong = money*10/100;
+        document.write(hoaHong);
+    }
+    else if (money <30){
+        hoaHong = money*20/100;
+        document.write(hoaHong);
+    }
+    else if (money <50){
+        hoaHong = money*30/100;
+        document.write(hoaHong);
+    }
+    else
+    {
+        hoaHong = money*50/100;
+        document.write(hoaHong);
+    }
+
+</script>
+</body>
+</html>
