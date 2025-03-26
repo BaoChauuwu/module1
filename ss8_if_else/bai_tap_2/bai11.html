@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tính tiền điện</title>
+</head>
+<body>
+<script>
+  let dien = Number(prompt("Nhập số điện bạn đã dùng:"));
+  let total = 0;
+
+  if (dien <= 0) {
+    alert("Vui lòng nhập số dien hợp lệ!");
+  } else {
+    if (dien <= 50) {
+      total = dien * 1.728;
+    } else if (dien <= 100) {
+      total = 50 * 1.728 + (dien - 50) * 1.786;
+    } else if (dien <= 200) {
+      total = 50 * 1.728 + 50 * 1.786 + (dien - 100) * 2.074;
+    } else if (dien <= 300) {
+      total = 50 * 1.728 + 50 * 1.786 + 100 * 2.074 + (dien - 200) * 2.612;
+    } else if (dien <= 400) {
+      total = 50 * 1.728 + 50 * 1.786 + 100 * 2.074 + 100 * 2.612 + (dien - 300) * 2.919;
+    } else {
+      total = 50 * 1.728 + 50 * 1.786 + 100 * 2.074 + 100 * 2.612 + 100 * 2.919 + (dien - 400) * 3.015;
+    }
+
+    alert("Tiền điện phải trả là: " + total + " VND");
+  }
+</script>
+</body>
+</html>

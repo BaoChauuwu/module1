@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+  let count = 0;
+  let n = 2;
+  let number = prompt("Mời bạn nhập số lượng số nguyên tố cần in");
+
+  while (count < number) {
+    let isPrime = true;
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+      if (n % i === 0) {
+        isPrime = false;
+        break;
+      }
+    }
+
+    if (isPrime) {
+      count++;
+      alert(n);
+    }
+    n++;
+  }
+
+</script>
+</body>
+</html>

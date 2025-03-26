@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let tienVon = parseFloat(prompt("moi ban nhap so tien goc cua ban:"));
+    let laiSuat= parseFloat(prompt("moi ban nhap lai suat hang thang:"));
+    let month= parseFloat(prompt("moi ban nhap so thang cho vay la:"));
+    let result =0;
+    for (let i=1;i <= month;i++){
+        result= tienVon*Math.pow((1+laiSuat/100),i);
+    }
+    alert( parseFloat(result));
+</script>
+</body>
+</html>

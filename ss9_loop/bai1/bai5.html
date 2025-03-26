@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 5</title>
+</head>
+<body>
+<script>
+
+  let f0=0;
+  let f1=1;
+  let result=0;
+  for (let i=0;i<20;i++){
+    result+=f0;
+    let ketQua=f0+f1;
+    f0=f1;
+    f1=ketQua;
+  }
+  alert(result);
+
+
+</script>
+</body>
+</html>
