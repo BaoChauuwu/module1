@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function compareStrings(str1, str2) {
+    const arr1 = str1.split('');
+    const arr2 = str2.split('');
+    return arr1.length === arr2.length && arr1.every((char, index) => char === arr2[index]);
+  }
+
+  let string1 = prompt("Nhập chuỗi thứ nhất:");
+  let string2 = prompt("Nhập chuỗi thứ hai:");
+
+  if (compareStrings(string1, string2)) {
+    alert("Hai chuỗi giống nhau.");
+  } else {
+    alert("Hai chuỗi không giống nhau.");
+  }
+
+</script>
+</body>
+</html>

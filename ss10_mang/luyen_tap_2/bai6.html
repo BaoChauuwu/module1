@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function replace(arr) {
+        return arr.map(item => item === '-' ? '_' : item);  
+    }
+
+    let inputArray = prompt("Nhập một mảng ký tự (các phần tử phân tách bằng dấu phẩy):").split(',');
+    let resultArray = replace(inputArray);
+
+    alert("Mảng sau khi thay thế: " + resultArray.join(','));
+
+</script>
+</body>
+</html>
