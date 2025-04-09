@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Viết chương trình khởi tạo hoặc nhập vào một mảng số nguyên gồm 10 phần tử.
+Nhập hoặc tạo một phần tử số nguyên V. Chương trình kiểm tra xem V có thuộc mảng đã cho không.-->
+
+<!--Nếu V thuộc mảng,
+ xóa V khỏi mảng (dịch các phần tử bên phải V sang vị trí của V và gán 0 cho phần tử cuối cùng của mảng).-->
+<script>
+  let n= prompt("moi ban nhap so phan tu cua mang: ");
+  let arrays=[];
+  for (let i=0;i<n;i++){
+    arrays[i]=prompt("moi ban nhap ptu cua mang: ");
+  }
+  let number=prompt("moi ban nhap so nguyen tu ban phim")
+  for (let index in arrays) {
+    if(arrays[index]===number){
+        arrays.splice(index,1);
+        arrays.pop(0);
+        break;
+    }
+  }
+  document.write(arrays.toString())
+</script>
+</body>
+</html>

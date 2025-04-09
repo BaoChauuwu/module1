@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <script>
+   let n= prompt("moi ban nhap so phan tu cua mang: ");
+   let arrays=[];
+   for (let i=0;i<n;i++){
+     arrays[i]=prompt("moi ban nhap ptu cua mang: ");
+   }
+   let number=prompt("moi ban nhap so nguyen tu ban phim")
+   for (let index in arrays) {
+      if(arrays[index]===number){
+        document.write("V is the arrays")
+        document.write("<br>")
+      }
+      else {
+        document.write("<br>")
+        document.write("V is not in the arrays")
+      }
+   }
+
+ </script>
+</body>
+</html>

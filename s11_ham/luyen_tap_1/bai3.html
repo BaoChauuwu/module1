@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Tạo hàm nhận vào hai tham số:-->
+<!--Nếu giá trị của tham số thứ nhất lớn hơn tham số thứ hai, hiển thị hộp thoại thông báo cho người dùng.-->
+<!--Nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai, trả về tổng của hai tham số.-->
+<script>
+    let numberOne = prompt("Moi ban nhap so thu nhat tu ban phim : ");
+    let numberTwo = prompt("Moi ban nhap so thu hai tu ban phim: ");
+    checkNumber(numberOne, numberTwo);
+
+    function checkNumber(a, b) {
+        a = parseInt(a);
+        b = parseInt(b);
+        if (a > b) {
+            alert("So thu nhat lon hon so thu 2");
+            return;
+        }
+        return alert(a + b);
+    }
+</script>
+
+</body>
+</html>

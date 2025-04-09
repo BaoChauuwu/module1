@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Viết chương trình khởi tạo hoặc nhập vào một mảng số nguyên gồm 10 phần tử. -->
+<!--Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị mảng đã được sắp xếp.-->
+
+<script>
+    let n= prompt("moi ban nhap so phan tu cua mang: ");
+    let arrays=[];
+    for (let i=0;i<n;i++){
+        arrays[i]=prompt("moi ban nhap ptu cua mang: ");
+    }
+    for (let index in arrays) {
+        arrays.sort((a,b) => b-a);
+    }
+    document.write(arrays)
+</script>
+</body>
+</html>

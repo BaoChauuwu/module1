@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function swapNumbers(a, b) {
+        let temp = a;
+        a = b;
+        b = temp;
+
+        return [a, b];
+    }
+
+    let num1 = 5;
+    let num2 = 10;
+    alert("Trước khi đổi chỗ: " + num1 + ", " + num2);
+
+    [num1, num2] = swapNumbers(num1, num2);
+    alert("Sau khi đổi chỗ: " + num1 + ", " + num2);
+
+</script>
+</body>
+</html>

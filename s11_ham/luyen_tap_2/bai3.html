@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function tinhGiaiThua(n) {
+        if (n === 0) {
+            return 1;
+        }
+        let giaiThua = 1;
+        for (let i = 1; i <= n; i++) {
+            giaiThua *= i;
+        }
+        return giaiThua;
+    }
+
+    let number = prompt("moi ba nhap so can tinh giai thua");
+    alert(tinhGiaiThua(number));
+</script>
+</body>
+</html>

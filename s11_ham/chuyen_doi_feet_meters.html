@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$Title$</title>
+</head>
+<body>
+
+<script>
+    let number = parseInt(prompt("Moi ban tác vụ muốn làm "));
+    switch (number) {
+        case 1:
+            let feet = parseFloat(prompt("Moi ban nhap so feet can chuyen doi sang meter"));
+            alert(feetToMeter(feet));
+
+            break;
+        case 2:
+            let meter = parseFloat(prompt("Moi ban nhap so meter can chuyen doi sang feet"));
+            alert(meterToFeet(meter));
+            break;
+        default:
+            alert("Sai ròi vui lòng nhập lại");
+    }
+
+    function feetToMeter(feet) {
+        return 0.305 * feet;
+    }
+
+    function meterToFeet(meter) {
+        return 3.279 * meter;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let number = prompt("moi ban nhap r tu ban phim");
+    number = parseFloat(number);
+
+    if (isNaN(number)) {
+        alert("Vui lòng nhập một số hợp lệ cho bán kính.");
+    } else {
+        alert("Chu vi hinh tron là: " + chuViHinhTron(number));
+        alert("Dien tich hinh tron là: " + dienTichHinhTron(number));
+    }
+
+
+    function chuViHinhTron(r) {
+        return Math.PI * 2 * r;
+    }
+
+    function dienTichHinhTron(r) {
+        return Math.PI * Math.pow(r, 2);
+    }
+</script>
+</body>
+</html>

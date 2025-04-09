@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Viết chương trình đếm số nguyên âm trong một chuỗi.-->
+
+<script>
+    let n= prompt("moi ban nhap n phan tu cua mang");
+    let arrays=[]
+    for (let i=0;i<n;i++){
+        arrays[i]=prompt("moi ban nhap phan tu cua mang")
+    }
+    let count=0;
+    for(let i=0;i<n;i++){
+        if (arrays[i]<0){
+            count++
+        }
+    }
+    alert("so phan tu nguyen am la: "+ count)
+</script>
+</body>
+</html>

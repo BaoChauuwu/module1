@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let start = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let start_sample = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    let String = prompt("moi ban nhap ngoi sao can tìm:");
+    checkStart(String)
+
+    function checkStart(String) {
+        for (let i = 0; i < start.length; i++) {
+            if (String.toLowerCase() === start[i].toLowerCase()) {
+                return alert(start_sample[i]);
+            }
+        }
+        alert ("khong tìm thấy ngôi sao nào cả");
+    }
+</script>
+</body>
+</html>

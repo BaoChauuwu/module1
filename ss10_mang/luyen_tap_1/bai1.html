@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Viết chương trình khởi tạo một mảng số nguyên gồm 10 phần tử.
+Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.-->
+
+<script>
+  let count=0;
+  let result=" ";
+  let arrays= [10,1,2,3,4,5,11,12,13,15];
+  for (let index in arrays) {
+    if (arrays[index]>=10){
+      // document.write(arrays[index].toString())
+      result+=arrays[index];
+      count++;
+    }
+  }
+  document.write("các số lớn hơn 10 là: "+count);
+  document.write("<br>");
+  document.write(result)
+
+</script>
+</body>
+</html>

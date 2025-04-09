@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Array Concatenation</title>
+</head>
+<body>
+<!-- Viết chương trình khởi tạo hoặc nhập vào hai mảng số nguyên gồm 10 phần tử (gọi là mảng a và b).
+Tạo mảng c gồm 20 phần tử. Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c.
+Hiển thị mảng c. -->
+
+<script>
+  let a = [];
+  let b = [];
+
+  for (let i = 0; i < 10; i++) {
+    a[i] = parseInt(prompt(`Mời bạn nhập phần tử ${i+1}của mảng a:`));
+  }
+  for (let i = 0; i < 10; i++) {
+    b[i] = parseInt(prompt(`Mời bạn nhập phần tử ${i+1} của mảng b:`));
+  }
+  let c = b.concat(a);
+  document.write("Mảng c là: " + c);
+</script>
+
+</body>
+</html>
