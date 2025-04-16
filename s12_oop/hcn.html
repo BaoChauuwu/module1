@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rectangle Canvas</title>
+</head>
+<body>
+
+<canvas id="myCanvas"></canvas>
+
+<script>
+    class Rectangle {
+        constructor(length, width) {
+            this.lengthValue = length;
+            this.widthValue = width;
+        }
+
+        getLength() {
+            return this.lengthValue;
+        }
+
+        getWidth() {
+            return this.widthValue;
+        }
+
+        chuVi() {
+            return (this.lengthValue + this.widthValue) * 2;
+        }
+
+        dienTich() {
+            return this.lengthValue * this.widthValue;
+        }
+    }
+
+    let rectangle = new Rectangle(200, 300); // chiều dài 200, chiều rộng 300
+    let width = rectangle.getWidth();
+    let length = rectangle.getLength();
+    let chuVi = rectangle.chuVi();
+    let dienTich = rectangle.dienTich();
+
+    document.write("Dien tich cua hinh chu nhat la: " + dienTich + "<br>");
+    document.write("Chu vi cua hinh chu nhat la: " + chuVi + "<br>");
+    document.write("Chieu rong: " + width + "<br>");
+    document.write("Chieu dai: " + length + "<br>");
+
+    // Vẽ hình
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    ctx.fillRect(0, 0, width, length);
+</script>
+
+</body>
+</html>

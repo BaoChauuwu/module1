@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperatur {
+        constructor(nhietDo) {
+            this.nhietDo = nhietDo;
+        }
+
+        getNhietDo() {
+            return this.nhietDo;
+        }
+
+        setNhietDo(nhietDo) {
+            this.nhietDo = nhietDo;
+        }
+
+        fahrenheit() {
+            return this.nhietDo * 9 / 5 + 32;
+        }
+
+        kelvin() {
+            return this.nhietDo + 273.15;
+        }
+
+        checkNhietDo() {
+            if (this.nhietDo < -273) {
+                return false;
+            } else
+                return true;
+        }
+    }
+
+    let doC = new Temperatur(parseFloat(prompt("Moi ban nhap nhiet do")));
+    doC.checkNhietDo();
+    if (doC.checkNhietDo()){
+        document.write("Nhiet do chuyen sang do F la: " + doC.fahrenheit() +"<br>");
+        document.write("Nhiet do chuyen sang do K la: " + doC.kelvin());
+    }
+    else {
+        document.write("Nhiet do phai lon hon -273")
+    }
+
+</script>
+</body>
+</html>
