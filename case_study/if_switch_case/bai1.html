@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yeu_Cau_1</title>
+</head>
+<body>
+<script>
+    let salary = parseFloat(prompt("Moi ban nhap so tien luong tuong duong trieu thang kiem duoc"));
+    while (!checkSalary(salary)){
+        salary=prompt("Moi ban nhap lai");
+    }
+    let sum = 0;
+    if (salary < 7) {
+        sum = salary * 0.05;
+    } else if (salary < 15) {
+        sum = salary * 0.1;
+    } else {
+        sum = salary * 0.2;
+    }
+    document.write("Luong sau the la: " + sum + "tr");
+
+    function checkSalary(salary) {
+        if (salary < 0) {
+            return false
+        } else return true;
+    }
+</script>
+</body>
+</html>

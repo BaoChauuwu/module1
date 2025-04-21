@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n=prompt("moi ban nhap so phan tu cua mang~")
+    let array= [];
+    for (let i=0;i<n;i++){
+        array[i]=prompt(`Nhap phan tu thu ${i+1} la`);
+    }
+    console.log(array)
+    let newarray=[];
+    let m=prompt("moi ban nhap so phan tu cua mang~ 2 la: ");
+
+    for (let i=0;i<m;i++){
+        newarray[i]=prompt(`Nhap phan tu thu ${i+1} la`);
+    }
+    console.log(newarray)
+
+    for (let i=0;i<array.length;i++){
+        for (let j=0;j<newarray.length;j++){
+            if (array[i]===newarray[j]){
+                newarray.splice(j,1)
+            }
+        }
+    }
+    console.log(newarray);
+</script>
+</body>
+</html>

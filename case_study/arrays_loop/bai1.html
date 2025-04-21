@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let arrays=[];
+  let n=parseInt(prompt("moi ban nhap do dai cua mang"))
+  for (let i=0;i<n;i++){
+    arrays[i]=parseInt(prompt("moi ban nhap phan tu"))
+  }
+  console.log(arrays)
+  let newarrays=[];
+  let sum=0;
+  for (let i=0;i<arrays.length;i++){
+      sum+=arrays[i];
+      newarrays.push(sum)
+  }
+
+  console.log(newarrays)
+</script>
+</body>
+</html>

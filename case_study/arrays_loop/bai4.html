@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+</head>
+<body>
+<script>
+    function showMenu() {
+        console.log("===== MENU =====");
+        console.log("1. Cafe");
+        console.log("2. Cam vắt");
+        console.log("3. Nước ép cà rốt");
+        console.log("4. Nước ép cà chua");
+        console.log("5. Nước lọc");
+        console.log("6. Nước dừa");
+        console.log("7. Thoát");
+    }
+
+    let choice;
+    do {
+        showMenu();
+        choice = prompt("Mời bạn nhập lựa chọn thức uống (1-6):");
+        switch (choice) {
+            case "1":
+                console.log("Bạn đã chọn: Cafe");
+                showTotal(12000);
+                break;
+            case "2":
+                console.log("Bạn đã chọn: Cam vắt");
+                showTotal(15000);
+                break;
+            case "3":
+                console.log("Bạn đã chọn: Nước ép cà rốt");
+                showTotal(18000);
+                break;
+            case "4":
+                console.log("Bạn đã chọn: Nước ép cà chua");
+                showTotal(20000);
+                break;
+            case "5":
+                console.log("Bạn đã chọn: Nước lọc");
+                showTotal(10000);
+                break;
+            case "6":
+                console.log("Bạn đã chọn: Nước dừa");
+                showTotal(22000);
+                break;
+            default:
+                console.log("Lựa chọn không hợp lệ");
+        }
+    } while (choice != 7)
+
+
+    function showTotal(price) {
+        let quantity = prompt("Nhập số lượng:");
+        let total = price * parseInt(quantity);
+        console.log("Tổng tiền là: " + total + " VND");
+    }
+</script>
+</body>
+</html>

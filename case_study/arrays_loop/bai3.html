@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n=prompt("moi ban nhap so phan tu cua mang~")
+    let array= [];
+    for (let i=0;i<n;i++){
+        array[i]=prompt(`Nhap phan tu thu ${i+1} la`);
+    }
+    console.log(array)
+    let newarray=[];
+    let m=prompt("moi ban nhap so phan tu cua mang~ 2 la: ");
+
+    for (let i=0;i<m;i++){
+        newarray[i]=prompt(`Nhap phan tu thu ${i+1} la`);
+    }
+    console.log(newarray)
+    let cuccut=[];
+    let sum=0;
+    for (let i=0;i<array.length;i++){
+        for (let j=0;j<newarray.length;j++){
+                sum=array[i]/newarray[j];
+            cuccut.push(sum)
+        }
+    }
+    let max=cuccut[0]
+    let dem=0;
+    for (let i=0;i<cuccut.length;i++){
+        if (cuccut[i]>max){
+            max=cuccut[i]
+            dem=i;
+            console.log("Index của mẫu lớn nhất là: "+i)
+
+
+        }
+
+    }
+
+</script>
+</body>
+</html>
