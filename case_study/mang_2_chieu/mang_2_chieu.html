@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // Hàm kiểm tra số nguyên tố
+  function isPrime(num) {
+    if (num < 2) return false;
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) return false;
+    }
+    return true;
+  }
+
+  let m = parseInt(prompt("Nhập số hàng (m):"));
+  let n = parseInt(prompt("Nhập số cột (n):"));
+
+  let matrix = [];
+  for (let i = 0; i < m; i++) {
+    matrix[i] = [];
+    for (let j = 0; j < n; j++) {
+      matrix[i][j] = parseInt(prompt(`Nhập phần tử matrix[${i}][${j}]:`));
+    }
+  }
+
+  // Bài 1: Tính tổng các số chẵn
+  let evenSum = 0;
+  for (let row of matrix) {
+    for (let num of row) {
+      if (num % 2 === 0) evenSum += num;
+    }
+  }
+
+  // Bài 2: Liệt kê và đếm số nguyên tố
+  let primeList = [];
+  for (let row of matrix) {
+    for (let num of row) {
+      if (isPrime(num)) {
+        primeList.push(num);
+      }
+    }
+  }
+  let primeCount = primeList.length;
+
+  // Bài 3: Tìm giá trị lớn nhất và nhỏ nhất
+  let min = matrix[0][0];
+  let max = matrix[0][0];
+  for (let row of matrix) {
+    for (let num of row) {
+      if (num < min) min = num;
+      if (num > max) max = num;
+    }
+  }
+
+  console.log("Ma trận đã nhập:");
+  console.table(matrix);
+
+  console.log("Tổng các số chẵn:", evenSum);
+  console.log("Các số nguyên tố:", primeList);
+  console.log("Số lượng số nguyên tố:", primeCount);
+  console.log("Giá trị nhỏ nhất:", min);
+  console.log("Giá trị lớn nhất:", max);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Management</title>
+</head>
+<body>
+<button type="button" onclick="create()">Create</button>
+<button type="button" onclick="deletes()">Delete</button>
+<button type="button" onclick="update()">Update</button>
+
+<div id="display"></div>
+
+<script>
+    class Information {
+        constructor(id, name, classes, email, date, module) {
+            this.id = id;
+            this.name = name;
+            this.classes = classes;
+            this.email = email;
+            this.date = date;
+            this.module = module;
+        }
+
+        getId() { return this.id; }
+        getName() { return this.name; }
+        getClasses() { return this.classes; }
+        getEmail() { return this.email; }
+        getDate() { return this.date; }
+        getMoudle() { return this.module; }
+
+        setName(name) { this.name = name; }
+        setClasses(classes) { this.classes = classes; }
+        setEmail(email) { this.email = email; }
+        setDate(date) { this.date = date; }
+        setMoulde(module) { this.module = module; }
+    }
+
+    let listStudent = [
+        new Information("HV-0001", "Nguyễn Văn A", "C1022G1", "nguyenvana@gmail.com", "01/01/2004", 1),
+        new Information("HV-0002", "Nguyễn Văn B", "C1122G1", "nguyenvanb@gmail.com", "02/02/2004", 1),
+        new Information("HV-0003", "Nguyễn Văn C", "C1222G1", "nguyenvanc@gmail.com", "03/03/2004", 1)
+    ];
+
+    function display() {
+        let tableString = `
+                <table border="1" style="border-collapse: collapse; width: 100%">
+                    <tr>
+                        <th>STT</th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Class</th>
+                        <th>Email</th>
+                        <th>Birthday</th>
+                        <th>Module</th>
+                    </tr>`;
+
+        for (let i = 0; i < listStudent.length; i++) {
+            tableString += `
+                    <tr>
+                        <td>${i + 1}</td>
+                        <td>${listStudent[i].getId()}</td>
+                        <td>${listStudent[i].getName()}</td>
+                        <td>${listStudent[i].getClasses()}</td>
+                        <td>${listStudent[i].getEmail()}</td>
+                        <td>${listStudent[i].getDate()}</td>
+                        <td>${listStudent[i].getMoudle()}</td>
+                    </tr>`;
+        }
+
+        tableString += `</table>`;
+        document.getElementById("display").innerHTML = tableString;
+    }
+
+    function create() {
+        let id = prompt("Enter ID:");
+        if (!id) return;
+
+        for (let student of listStudent) {
+            if (student.getId() === id) {
+                alert("ID đã tồn tại!");
+                return;
+            }
+        }
+
+        let name = prompt("Enter Name:");
+        let classes = prompt("Enter Class:");
+        let email = prompt("Enter Email:");
+        let date = prompt("Enter Date:");
+        let module = prompt("Enter Module:");
+
+        if (!name || !classes || !email || !date || !module) {
+            alert("Vui lòng điền đầy đủ thông tin!");
+            return;
+        }
+
+        let newStudent = new Information(id, name, classes, email, date, module);
+        listStudent.push(newStudent);
+        display();
+    }
+
+    function deletes() {
+        let id = prompt("Nhập ID học viên cần xoá:");
+        for (let i = 0; i < listStudent.length; i++) {
+            if (listStudent[i].getId() === id) {
+                listStudent.splice(i, 1);
+                display();
+                return;
+            }
+        }
+        alert("Không tìm thấy học viên với ID đó.");
+    }
+
+    function update() {
+        let id = prompt("Nhập ID học viên cần cập nhật:");
+        for (let student of listStudent) {
+            if (student.getId() === id) {
+                let name = prompt("Nhập tên mới:", student.getName());
+                let classes = prompt("Nhập lớp mới:", student.getClasses());
+                let email = prompt("Nhập email mới:", student.getEmail());
+                let date = prompt("Nhập ngày sinh mới:", student.getDate());
+                let module = prompt("Nhập module mới:", student.getMoudle());
+
+                student.setName(name);
+                student.setClasses(classes);
+                student.setEmail(email);
+                student.setDate(date);
+                student.setMoulde(module);
+                display();
+                return;
+            }
+        }
+        alert("Không tìm thấy học viên với ID đó.");
+    }
+
+    display();
+</script>
+</body>
+</html>
