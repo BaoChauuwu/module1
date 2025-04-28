@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý danh bạ</title>
+</head>
+<body>
+
+<div id="display"></div>
+
+<script>
+    class Contacts {
+        constructor(sdt, name, address) {
+            this.sdt = sdt;
+            this.name = name;
+            this.address = address;
+        }
+
+        getNumber() {
+            return this.sdt;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getAddress() {
+            return this.address;
+        }
+
+        setNumber(sdt) {
+            this.sdt = sdt;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        setAddress(address) {
+            this.address = address;
+        }
+    }
+
+    let listContact = [
+        new Contacts("0763559435", "Bao Chau", "Quang Nam"),
+        new Contacts("0123456789", "Minh Tri", "Da Nang"),
+        new Contacts("0987654321", "Hoang Nam", "Ha Noi")
+    ];
+
+    function display() {
+            let result=`
+            <table border="1px" style="border-collapse: collapse;width: 100px">
+            <tr>
+                <td>Sdt</td>
+                <td>Name</td>
+                <td>Address</td>
+                <td>Action</td>
+            </tr>
+            `
+        for (let i=0;i<listContact.length;i++){
+            result+=`
+            <tr>
+                    <td>${listContact[i].getNumber()}</td>
+                    <td>${listContact[i].getName()}</td>
+                    <td>${listContact[i].getAddress()}</td>
+                     <td>
+                        <button type="button" onclick="deleteContacts('${listContact[i].getNumber()}')">Xóa</button>
+                    </td>
+                    <td><button type="button" onclick="addContacts()">ADD</button></td>
+            </tr>
+            `
+        }
+            result+=`</table>`
+            document.getElementById("display").innerHTML=result;
+
+    }
+    display();
+
+    function deleteContacts(sdt){
+        if(confirm("ban co chac muon xoa so "+ sdt + "nay khong")){
+            let check =false;
+            for (let i=0;i<listContact.length;i++){
+                if(listContact[i].getNumber()===sdt){
+                    listContact.splice(i,1);
+                    check=true;
+                    display();
+                    break;
+                }
+            }
+            if (check){
+                alert("Xoa thanh cong")
+            }
+            else {
+                alert("Khong tim thay sdt")
+            }
+        }
+    }
+
+    function addContacts(){
+        let sdt=prompt("Moi ban nhap so dth tu ban phim");
+        let name=prompt("Moi ban nhap ten tu ban phim");
+        let address=prompt("Moi ban nhap dia chi tu ban phim");
+        if (!sdt||!name||!address){
+            alert("Khong duoc bo trong thong tin")
+            return;
+        }
+        let newContact= new Contacts(sdt,name,address);
+        listContact.push(newContact);
+        display();
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n=prompt("Nhap tu ban phim n phan tu");
+    while (isNaN(n) || n>=15 || n%3 !==0 ){
+        n=prompt(" Nhap lai phan tu cho dung")
+    }
+    let array=[];
+
+    for (let i=0;i<n;i++){
+        array[i]=parseInt(prompt(`Moi ban nhap phan tu thu ${i+1}`));
+    }
+
+    document.write(array);
+    let check =true;
+    for (let i=0;i<array.length;i+=3){
+        let group = [array[i],array[i+1],array[i+2]];
+            group.sort((a,b)=>a-b);
+        if(group[0]*group[0] + group[1]*group[1]===group[2]*group[2]){
+            check= true;
+        }
+        else{
+            check=false;
+            break;
+
+        }
+    }
+
+    document.write("<br>")
+    if (check){
+        document.write("OK")
+    }
+    else {
+        document.write("NOT OK")
+    }
+
+</script>
+</body>
+</html>

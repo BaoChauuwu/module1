@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt("Mời bạn nhập xâu ký tự:");
+
+    function chuanHoa(str) {
+        let words = str.trim().toLowerCase().split(/\s+/);
+        if (words.length === 1) {
+            return "chuoi co 1 ki tu";
+        }
+        let result = words.map(word => word[0].toUpperCase()).join('');
+        return result;
+    }
+
+
+    console.log(chuanHoa(str));
+
+</script>
+
+</body>
+</html>

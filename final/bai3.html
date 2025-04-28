@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<body>
+<script>
+    let n = prompt("Moi ban nhap n phan tu cua mang (n <= 50):");
+    while (isNaN(n) || n > 50 || n <= 0) {
+        n = prompt("Vui long nhap lai dung dieu kien (n > 0 và n <= 50):");
+    }
+
+    let newArr = [];
+    for (let i = 0; i < n; i++) {
+        newArr[i] = parseInt(prompt(`Moi ban nhap phan tu thu ${i + 1} cua mang:`));
+    }
+
+    document.write("Mang da nhap la :[" + newArr + "]<br><br>");
+
+    let k = Number(prompt("Nhap so nguyen duong bat ky:"));
+    while (isNaN(k) || k <= 0) {
+        k = Number(prompt("Vui long nhap lai cho dung:"));
+    }
+
+    let found = false;
+    for (let i = 0; i < newArr.length; i++) {
+        for (let j = i + 1; j < newArr.length; j++) {
+            if ((newArr[i] + newArr[j]) % k === 0) {
+                document.write("Cap so chia het cho " + k + " la: " + `(${newArr[i]}, ${newArr[j]})` + "<br>");
+                found = true;
+            }
+        }
+    }
+
+    if (!found) {
+        document.write("khong co cap so nao chia het cho" + k);
+    }
+</script>
+</body>
+</html>

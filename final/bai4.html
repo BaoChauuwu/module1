@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 4</title>
+</head>
+<body>
+<button type="button" onclick="addCustomer()">Tạo</button>
+<h2 style="color: pink; text-align: center">Quản Lý Khách Hàng</h2>
+
+<div id="display"></div>
+<script>
+    class Customer {
+        constructor(id, name, contacts, address, email) {
+            this.id = id;
+            this.name = name;
+            this.contacts = contacts;
+            this.address = address;
+            this.email = email;
+        }
+
+        getID() {
+            return this.id;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getContacts() {
+            return this.contacts;
+        }
+
+        getAddress() {
+            return this.address;
+        }
+
+        getEmail() {
+            return this.email;
+        }
+    }
+
+    let listCustomer = [
+        new Customer(1, "Bao Chau", "0763559435", "Quang Nam", "baochau@123"),
+        new Customer(2, "Ba Hung", "0763551435", "Quang Nam", "bahung@123"),
+        new Customer(3, "Van Chau", "0763529435", "Quang Nam", "vanchau@123")
+    ];
+
+    function display() {
+        let result = `
+            <table border="1" style="border-collapse: collapse; width: 100%;">
+                    <tr style="background: yellow">
+                        <th>Mã Khách Hàng</th>
+                        <th>Tên Khách Hàng</th>
+                        <th>Số Điện Thoại</th>
+                        <th>Địa Chỉ</th>
+                        <th>Email</th>
+                    </tr>
+        `
+        for (let i = 0; i < listCustomer.length; i++) {
+            result += `
+                <tr>
+                    <td>${listCustomer[i].getID()}</td>
+                    <td>${listCustomer[i].getName()}</td>
+                    <td>${listCustomer[i].getContacts()}</td>
+                    <td>${listCustomer[i].getAddress()}</td>
+                    <td>${listCustomer[i].getEmail()}</td>
+                </tr>
+            `
+        }
+        result += `</table>`
+        document.getElementById("display").innerHTML = result;
+    }
+
+    display();
+
+    function addCustomer() {
+        let id = parseInt(prompt("Mời bạn nhập ID của khách hàng"));
+        if (!id) {
+            alert("ID không hợp lệ");
+            return;
+        }
+        for (let i = 0; i < listCustomer.length; i++) {
+            if (listCustomer[i].getID() === id) {
+                alert("Khách hàng đã tồn tại");
+                return;
+            }
+        }
+        let name = prompt("Mời bạn nhập tên:");
+        let contacts = prompt("Mời bạn nhập số điện thoại:");
+        let address = prompt("Mời bạn nhập địa chỉ:");
+        let email = prompt("Mời bạn nhập email:");
+
+        if (!name || !contacts || !address || !email) {
+            alert("Thông tin phải đầy đủ");
+            return;
+        }
+
+        let newCustomer = new Customer(id, name, contacts, address, email);
+        listCustomer.push(newCustomer);
+        display();
+    }
+</script>
+</body>
+</html>

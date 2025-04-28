@@ -112,26 +112,31 @@
     }
 
     function update() {
-        let id = prompt("Nhập ID học viên cần cập nhật:");
-        for (let student of listStudent) {
-            if (student.getId() === id) {
-                let name = prompt("Nhập tên mới:", student.getName());
-                let classes = prompt("Nhập lớp mới:", student.getClasses());
-                let email = prompt("Nhập email mới:", student.getEmail());
-                let date = prompt("Nhập ngày sinh mới:", student.getDate());
-                let module = prompt("Nhập module mới:", student.getMoudle());
+        let id = prompt("Nhập ID học viên cần sửa:");
+        if (!id) return;
 
-                student.setName(name);
-                student.setClasses(classes);
-                student.setEmail(email);
-                student.setDate(date);
-                student.setMoulde(module);
+        for (let i = 0; i < listStudent.length; i++) {
+            if (listStudent[i].getId() === id) {
+                let name = prompt("Nhập tên mới:");
+                let classes = prompt("Nhập lớp mới:");
+                let email = prompt("Nhập email mới:");
+                let date = prompt("Nhập ngày sinh mới:");
+                let module = prompt("Nhập module mới:");
+
+                listStudent[i].setName(name);
+                listStudent[i].setClasses(classes);
+                listStudent[i].setEmail(email);
+                listStudent[i].setDate(date);
+                listStudent[i].setMoulde(module);
+
                 display();
                 return;
             }
         }
-        alert("Không tìm thấy học viên với ID đó.");
+
+        alert("Không tìm thấy ID học viên!");
     }
+
 
     display();
 </script>

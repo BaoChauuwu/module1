@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2</title>
+</head>
+<body>
+
+<script>
+    function lamTronDiem(diem) {
+        if (diem <= 0 || diem >= 100) {
+            document.write("Nhap cho dung thanh diem tu (0-100)" + "<br>");
+            return;
+        }
+
+        if (diem < 48) {
+            document.write("Diem cua ban la " + diem + " qua thap nen ban bi truot" + "<br>");
+            return diem;
+        }
+
+        let diemLamTron;
+        if (diem % 5 === 0) {
+            diemLamTron = diem;
+        } else {
+            diemLamTron = diem + (5 - (diem % 5));
+        }
+
+        if (diemLamTron - diem < 3) {
+            document.write("Diem " + diem + " duoc lam tron thanh " + diemLamTron + "<br>")
+            return diemLamTron;
+        } else {
+            document.write("Diem " + diem + " giu nguyen " + "<br>")
+            return diem;
+        }
+    }
+
+    lamTronDiem(-1);
+    lamTronDiem(40);
+    lamTronDiem(84);
+    lamTronDiem(77);
+    lamTronDiem(48);
+</script>
+</body>
+</html>
